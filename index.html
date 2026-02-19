@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ferti Verse - Fertilizer Guide for Farms</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="lang-selector">
+                <label for="lang-select">🌐 </label>
+                <select id="lang-select">
+                    <option value="en">English</option>
+                    <option value="kn">ಕನ್ನಡ (Kannada)</option>
+                    <option value="hi">हिंदी (Hindi)</option>
+                    <option value="te">తెలుగు (Telugu)</option>
+                </select>
+            </div>
+            <ul>
+                <li><a href="#home" data-i18n="nav-home">Home</a></li>
+                <li><a href="#farms" data-i18n="nav-farms">Farms</a></li>
+                <li><a href="#fertilizers" data-i18n="nav-fertilizers">Fertilizers</a></li>
+                <li><a href="#bacteria-guide" data-i18n="nav-bacteria">Bacteria Guide</a></li>
+                <li><a href="#contact" data-i18n="nav-contact">Contact</a></li>
+            </ul>
+        </nav>
+        <section id="home" class="hero">
+            <h1 class="calligraphy-title">Ferti Verse</h1>
+            <p class="tagline" data-i18n="tagline">Your complete guide to fertilizers across all farm types</p>
+        </section>
+    </header>
+
+    <main>
+        <section id="farms" class="section farms-section">
+            <h2 data-i18n="section-farms">Types of Farms & Fertilizers</h2>
+            <div class="content-card">
+                <p data-i18n="farms-intro">Different farms require different fertilizer strategies. Here's an organized guide:</p>
+                <div class="farms-grid" id="farms-content"></div>
+            </div>
+        </section>
+
+        <section id="fertilizers" class="section fertilizers-section">
+            <h2 data-i18n="section-fertilizer-forms">Forms of Fertilizers</h2>
+            <div class="content-card">
+                <div class="fertilizers-grid" id="fertilizers-content"></div>
+            </div>
+        </section>
+
+        <section id="bacteria-guide" class="section bacteria-section">
+            <h2 data-i18n="section-bacteria-title">Fertilizer-Bacteria Compatibility Guide</h2>
+            <p class="guide-intro" data-i18n="bacteria-intro">Know which fertilizers work best with which beneficial soil bacteria for optimal farm health:</p>
+            <div class="content-card table-card">
+                <div class="table-wrapper">
+                    <table class="compatibility-table" id="bacteria-table">
+                        <thead>
+                            <tr>
+                                <th data-i18n="col-bacteria">Bacteria</th>
+                                <th data-i18n="col-fertilizers">Compatible Fertilizers</th>
+                                <th data-i18n="col-farm-use">Best For Farms</th>
+                            </tr>
+                        </thead>
+                        <tbody id="bacteria-table-body"></tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section contact-section">
+            <h2 data-i18n="section-contact">Contact</h2>
+            <div class="content-card contact-card">
+                <p data-i18n="contact-intro">For fertilizer inquiries, farm consultation, and bulk orders:</p>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <span class="icon">📧</span>
+                        <span data-i18n="email-label">Email:</span>
+                        <a href="mailto:info@fertiverse.com">info@fertiverse.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <span class="icon">📞</span>
+                        <span data-i18n="phone-label">Phone:</span>
+                        <a href="tel:+919876543210">+91 98765 43210</a>
+                    </div>
+                    <div class="contact-item">
+                        <span class="icon">📍</span>
+                        <span data-i18n="address-label">Address:</span>
+                        <span data-i18n="address-value">Ferti Verse Agri Solutions, Bengaluru, Karnataka, India</span>
+                    </div>
+                </div>
+                <p class="contact-note" data-i18n="contact-note">We provide expert guidance on organic, chemical, and bio-fertilizers for all farm types.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Ferti Verse. <span data-i18n="footer-rights">All rights reserved.</span></p>
+    </footer>
+
+    <script src="translations.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
