@@ -69,7 +69,9 @@
                         <h4 data-i18n="share-photo-title">Share Photos</h4>
                         <label for="photo-upload" class="upload-label" data-i18n="share-photo-label">Choose farm photos</label>
                         <input id="photo-upload" type="file" accept="image/*" multiple>
+                        <button type="button" id="share-photo-btn" data-i18n="share-photo-btn">Share Photos</button>
                         <div id="photo-preview" class="photo-preview"></div>
+                        <div id="shared-photo-feed" class="shared-photo-feed"></div>
                     </div>
 
                     <div class="community-box">
@@ -88,6 +90,7 @@
 
                     <div class="community-box">
                         <h4 data-i18n="chat-title">Community Chat</h4>
+                        <input id="chat-name" type="text" data-i18n-placeholder="chat-name-placeholder" placeholder="Enter your name">
                         <div id="chat-messages" class="chat-messages"></div>
                         <div class="chat-controls">
                             <input id="chat-input" type="text" data-i18n-placeholder="chat-placeholder" placeholder="Type your message">
@@ -121,6 +124,7 @@
         <p>&copy; 2025 Ferti Verse. <span data-i18n="footer-rights">All rights reserved.</span></p>
     </footer>
 
+    <script src="/socket.io/socket.io.js"></script>
     <script src="translations.js"></script>
     <script src="script.js"></script>
 </body>
