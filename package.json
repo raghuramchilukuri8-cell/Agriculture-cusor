@@ -1,0 +1,14 @@
+{
+  "name": "ferti-verse-community",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Ferti Verse website with real-time community chat and photo sharing",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "socket.io": "^4.8.1"
+  }
+}
