@@ -26,7 +26,7 @@
                 <li><a href="farms.html" data-i18n="nav-farms">Farms</a></li>
                 <li><a href="fertilizers.html" data-i18n="nav-fertilizers">Fertilizers</a></li>
                 <li><a href="bacteria-guide.html" data-i18n="nav-bacteria">Bacteria Guide</a></li>
-                <li><a href="contact.html" data-i18n="nav-contact">Contact</a></li>
+                <li><a href="contact.html" class="active" aria-current="page" data-i18n="nav-contact">Contact</a></li>
             </ul>
         </nav>
         <section class="hero">
@@ -58,6 +58,61 @@
                     </div>
                 </div>
                 <p class="contact-note" data-i18n="contact-note">We provide expert guidance on organic, chemical, and bio-fertilizers for all farm types.</p>
+            </div>
+
+            <div class="content-card community-card">
+                <h3 data-i18n="community-title">Community</h3>
+                <p data-i18n="community-intro">Share farm photos, write notes, invite members, and connect with each other.</p>
+
+                <div class="community-grid">
+                    <div class="community-box">
+                        <h4 data-i18n="share-photo-title">Share Photos</h4>
+                        <label for="photo-upload" class="upload-label" data-i18n="share-photo-label">Choose farm photos</label>
+                        <input id="photo-upload" type="file" accept="image/*" multiple>
+                        <div id="photo-preview" class="photo-preview"></div>
+                    </div>
+
+                    <div class="community-box">
+                        <h4 data-i18n="notes-title">Notes</h4>
+                        <textarea id="community-note" rows="5" data-i18n-placeholder="notes-placeholder" placeholder="Write your farming notes here..."></textarea>
+                        <button type="button" id="save-note-btn" data-i18n="save-note-btn">Save Note</button>
+                        <p id="note-status" class="status-text"></p>
+                    </div>
+
+                    <div class="community-box">
+                        <h4 data-i18n="invite-title">Invite Members</h4>
+                        <input id="invite-email" type="email" data-i18n-placeholder="invite-placeholder" placeholder="Enter member email">
+                        <button type="button" id="invite-btn" data-i18n="invite-btn">Send Invite</button>
+                        <p id="invite-status" class="status-text"></p>
+                    </div>
+
+                    <div class="community-box">
+                        <h4 data-i18n="chat-title">Community Chat</h4>
+                        <div id="chat-messages" class="chat-messages"></div>
+                        <div class="chat-controls">
+                            <input id="chat-input" type="text" data-i18n-placeholder="chat-placeholder" placeholder="Type your message">
+                            <button type="button" id="chat-send-btn" data-i18n="chat-send-btn">Send</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="community-crops">
+                    <h4 data-i18n="community-crops-title">Community Crops: Fruits, Vegetables, and Grains</h4>
+                    <div class="crop-columns">
+                        <div>
+                            <h5 data-i18n="fruits-title">Fruits</h5>
+                            <p data-i18n="fruits-list">Mango, Banana, Apple, Orange, Grapes, Pomegranate, Papaya, Guava</p>
+                        </div>
+                        <div>
+                            <h5 data-i18n="vegetables-title">Vegetables</h5>
+                            <p data-i18n="vegetables-list">Tomato, Onion, Potato, Brinjal, Carrot, Cabbage, Spinach, Okra</p>
+                        </div>
+                        <div>
+                            <h5 data-i18n="grains-title">Grains</h5>
+                            <p data-i18n="grains-list">Rice, Wheat, Maize, Millet, Sorghum, Barley, Oats, Ragi</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </main>

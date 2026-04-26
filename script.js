@@ -15,6 +15,12 @@
             if (t[key]) el.textContent = t[key];
         });
 
+        // Update placeholders
+        document.querySelectorAll('[data-i18n-placeholder]').forEach((el) => {
+            const key = el.getAttribute('data-i18n-placeholder');
+            if (t[key]) el.setAttribute('placeholder', t[key]);
+        });
+
         // Render farms
         const farmsEl = document.getElementById('farms-content');
         if (farmsEl && t.farms) {
@@ -68,4 +74,67 @@
     // Set initial language
     langSelect.value = currentLang;
     updateAllContent();
+
+    // Contact page: notes, photo preview, invite message, local chat
+    const noteArea = document.getElementById('community-note');
+    const saveNoteBtn = document.getElementById('save-note-btn');
+    const noteStatus = document.getElementById('note-status');
+    if (noteArea && saveNoteBtn && noteStatus) {
+        const savedNote = localStorage.getItem('fertiverse-note') || '';
+        noteArea.value = savedNote;
+        saveNoteBtn.addEventListener('click', () => {
+            localStorage.setItem('fertiverse-note', noteArea.value.trim());
+            noteStatus.textContent = 'Note saved successfully.';
+        });
+    }
+
+    const inviteBtn = document.getElementById('invite-btn');
+    const inviteEmail = document.getElementById('invite-email');
+    const inviteStatus = document.getElementById('invite-status');
+    if (inviteBtn && inviteEmail && inviteStatus) {
+        inviteBtn.addEventListener('click', () => {
+            const email = inviteEmail.value.trim();
+            if (!email) {
+                inviteStatus.textContent = 'Please enter an email address.';
+                return;
+            }
+            inviteStatus.textContent = `Invite sent to ${email}.`;
+            inviteEmail.value = '';
+        });
+    }
+
+    const photoUpload = document.getElementById('photo-upload');
+    const photoPreview = document.getElementById('photo-preview');
+    if (photoUpload && photoPreview) {
+        photoUpload.addEventListener('change', (event) => {
+            photoPreview.innerHTML = '';
+            Array.from(event.target.files).forEach((file) => {
+                if (!file.type.startsWith('image/')) return;
+                const img = document.createElement('img');
+                img.src = URL.createObjectURL(file);
+                img.alt = file.name;
+                photoPreview.appendChild(img);
+            });
+        });
+    }
+
+    const chatInput = document.getElementById('chat-input');
+    const chatSendBtn = document.getElementById('chat-send-btn');
+    const chatMessages = document.getElementById('chat-messages');
+    if (chatInput && chatSendBtn && chatMessages) {
+        const addChatMessage = (msg) => {
+            const div = document.createElement('div');
+            div.className = 'chat-message';
+            div.textContent = msg;
+            chatMessages.appendChild(div);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        };
+
+        chatSendBtn.addEventListener('click', () => {
+            const msg = chatInput.value.trim();
+            if (!msg) return;
+            addChatMessage(`You: ${msg}`);
+            chatInput.value = '';
+        });
+    }
 })();
